@@ -11,7 +11,7 @@
     "server": "http-server ./src/ -p 3001",
     "start": "npm run build && npm run server",
     "start:watch": "watch 'npm run start' .",
-    "build": "tsc -p ./src/",
+    "build": "node node_modules/typescript/bin/tsc -p ./src/",
     "lint": "tslint \"src/**/*.ts\""
   },
   "repository": {
