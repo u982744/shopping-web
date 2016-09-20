@@ -11,6 +11,10 @@
     "postinstall": "typings install",
     "lint": "tslint \"src/**/*.ts\""
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/u982744/shopping-web.git"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "2.0.0-rc.3",
