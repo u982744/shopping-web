@@ -1,0 +1,23 @@
+<div class="list-page">
+  <h1>My Lists</h1> 
+
+  <form>
+    <input [(ngModel)]="list" placeholder="Create a new list">
+    <button (click)="add()">Add</button>
+  </form>
+
+  <hr>
+
+  <item-list *ngIf="lists.length > 0"
+    [items]="lists"
+    [isViewable]="true"
+    (viewOutput)="view($event)"
+    (deleteOutput)="delete($event)"
+    (loaded)="hideLoadingIndicator()"></item-list>
+
+    <div class="center">
+      <button class="plain" (click)="back()">Back</button>
+    </div>
+</div>
+
+<activity-indicator [isLoading]="isLoading"></activity-indicator>

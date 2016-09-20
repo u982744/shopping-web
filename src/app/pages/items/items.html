@@ -1,0 +1,39 @@
+<div class="list-page">
+  <h1>{{ listName }}</h1> 
+
+  <form>
+    <input [(ngModel)]="item" placeholder="Add a new item">
+    <button (click)="add()">Add</button>
+  </form>
+
+  <hr>
+
+  <item-list *ngIf="itemList.length > 0"
+    [items]="itemList"
+    [isDoneable]="true"
+    (doneOutput)="toggleDone($event)"
+    (deleteOutput)="delete($event)"
+    (loaded)="hideLoadingIndicator()"></item-list>
+
+    <div class="center">
+      <button class="plain" (click)="back()">Back</button>
+      <button class="plain" (click)="shareToggle()">Share</button>
+    </div>
+
+    <activity-indicator [isLoading]="isLoading"></activity-indicator>
+</div>
+
+<div class="modal-overlay" *ngIf="showShare" (click)="shareToggle()"></div>
+
+<div class="modal" *ngIf="showShare">
+    <h1>Share List</h1>
+    <p>Enter an email address below to share this list with a friend.</p>
+    <form>
+        <input [(ngModel)]="email">
+        <button (click)="share()">Add</button>
+    </form>
+
+    <div class="center">
+        <button class="plain" (click)="shareToggle()">Cancel</button>
+    </div>
+</div>
