@@ -9,7 +9,7 @@
   },
   "scripts": {
     "server": "node server.js",
-    "copy": "cp -R node_nodules/ src/node_modules",
+    "copy": "cp -R node_modules/ src/node_modules",
     "start": "npm run build && npm run copy && npm run server",
     "start:watch": "watch 'npm run start' .",
     "build": "node ./node_modules/typescript/bin/tsc -p ./src/",
